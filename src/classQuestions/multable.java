@@ -14,6 +14,6 @@ public class multable {
             arr[i] = (i+1) * num;
             // System.out.println(num+" * "+i+" = "+num*i);
         System.out.println(Arrays.toString(arr));
-        }
+    }
 }
 
