@@ -1,3 +1,4 @@
+package Lab.exp4;
 
 import java.io.*;
 
@@ -9,12 +10,12 @@ int arr[]=new int[10];
 		System.out.println("Enter Array\n");
 		for(int i=0;i<n;i++){
 		arr[i]=Integer.parseInt(args[i]);
-        
+
     }
 
-        
+
 		int elt=Integer.parseInt(args[10]);
-       
+
 
         boolean bool=linear(elt,arr,n);
 		if (bool==true)
@@ -29,7 +30,7 @@ int arr[]=new int[10];
             {
                 if(arr[i]==elt)
               return true;
-                
+
             }
             return false;
         }
