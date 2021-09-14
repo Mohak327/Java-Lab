@@ -1,5 +1,4 @@
-package Lab.exp4;
-
+// package Lab.exp4;
 import java.io.*;
 
 public class linSearch3 {
@@ -10,12 +9,12 @@ int arr[]=new int[10];
 		System.out.println("Enter Array\n");
 		for(int i=0;i<n;i++){
 		arr[i]=Integer.parseInt(args[i]);
-
+        // System.out.println(arr[i]);
     }
 
-
+        //System.out.println("Enter Element\n");
 		int elt=Integer.parseInt(args[10]);
-
+        // int elt=5;
 
         boolean bool=linear(elt,arr,n);
 		if (bool==true)
@@ -36,3 +35,7 @@ int arr[]=new int[10];
         }
 
 }
+
+
+// ----------------------------------
+
