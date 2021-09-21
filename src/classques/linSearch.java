@@ -1,4 +1,4 @@
-package classQuestions;
+package classques;
 
 import java.util.Scanner;
 
