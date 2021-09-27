@@ -1,84 +1,86 @@
-interface I1 {
-	void methodI1(); //public static by default
-	}
-
-	interface I2 extends I1 {
-	void methodI2(); //public static by default
-	}
 
 
-	class A1 {
-	public String methodA1() {
-	String strA1 = "I am in methodC1 of class A1";
-	return strA1;
-	}
+class Person{
+String name;
+int age;
+void display(){
+	System.out.println("name is:"+name+"\nage is:"+age);
+}
+Person(int umar,String naam){
+	name=naam;
+	age=umar;
+}
+}
 
-	public String toString() {
-	return "toString() method of class A1";
-	}
-	}
 
-	class B1 extends A1 implements I2 {
-	public void methodI1() {
-	System.out.println("I am in methodI1 of class B1");
+class Student extends Person{
+Student(int umar, String naam,int roll,String b) {
+		super(umar, naam);
+		rollno=roll;
+	branch=b;
 	}
-	public void methodI2() {
-	System.out.println("I am in methodI2 of class B1");
+int rollno;
+String branch;
+void display(){
+	super.display();;
+	System.out.println("roll no is:"+rollno+"\nbranch is"+branch);
+}
+}
+class Employee extends Person{
+Employee(int umar, String naam,int Ecn,String Dj) {
+		super(umar, naam);
+		Ecno=Ecn;
+		Doj=Dj;
 	}
+int Ecno;
+String Doj;
+void display(){
+	super.display();
+	System.out.println("EC no is:"+Ecno+"\nDate of joining is"+Doj);
+}
+}
+class Faculty extends Employee{
+Faculty(int umar, String naam, int Ecn, String Dj,String D) {
+		super(umar, naam, Ecn, Dj);
+		desig=D;
 	}
+String desig;
+void display(){
+	super.display();
+	System.out.println("\ndesignation is"+desig);
+}
+}
+class Staff extends Employee{
+Staff(int umar, String naam, int Ecn, String Dj,String D) {
+		super(umar, naam, Ecn, Dj);
+		desig=D;
+	}
+String desig;
+void display(){
+	super.display();
+	System.out.println("\ndesignation is"+desig);
+}
+}
 
-	class C1 implements I2 {
-	public void methodI1() {
-	System.out.println("I am in methodI1 of class C1");
-	}
+public class Interface{
+public static void main(String[] args) {
+	
+Staff ob1=new Staff(25,"Mohan",8001,"12/07/2000","Clerical");
+Faculty ob2=new Faculty(35,"Jeetu",1001,"22/06/2003","Professor");
+Employee ob3=new Employee(40,"Arjun",4001,"10/08/2009");
+Student ob4=new Student(18,"Ramit",23,"CSE");
+Person ob5=new Person(23,"Mohawk");
 
-	public void methodI2() {
-	System.out.println("I am in methodI2 of class C1");
-	}
-	}
+System.out.println("Class Staff\n");
+ob1.display();
+System.out.println("Class Faculty\n");
+ob2.display();
+System.out.println("Class Employee\n");
+ob3.display();
+System.out.println("Class Student\n");
+ob4.display();
+System.out.println("Class Person\n");
+ob5.display();
 
-	/* Note that the class is declared as abstract as it does not satisfy the interface contract */
-	abstract class D1 implements I2 {
-	public void methodI1() {
-	}
-	//This class does not implement methodI2() hence declared abstract.
-	}
-
-	public class Interface {
-	public static void main(String[] args) {
-	I1 i1 = new B1();
-	i1.methodI1(); 			//OK as methodI1 is present in B1
-	// i1.methodI2(); Compilation error as methodI2 not present in I1
-	// Casting to convert the type of the reference from type I1 to type I2
-	((I2) i1).methodI2();
-	I2 i2 = new B1();
-	i2.methodI1(); //OK
-	i2.methodI2(); //OK
-	// Does not Compile as methodA1() not present in interface reference I1
-	// String var = i1.methodA1();
-	//Hence I1 requires a cast to invoke methodA1
-	String var2 = ((A1) i1).methodA1();
-	System.out.println("var2 : " + var2);
-	String var3 = ((B1) i1).methodA1();
-	System.out.println("var3 : " + var3);
-	String var4 = i1.toString();
-	System.out.println("var4 : " + var4);
-	String var5 = i2.toString();
-	System.out.println("var5 : " + var5);
-	I1 i3 = new C1();
-	String var6 = i3.toString();
-	System.out.println("var6 : " + var6);	//It prints the Object
-	// toString() method
-	Object o1 = new B1();
-	// o1.methodI1(); does not compile as Object class
-	//does not define methodI1()
-	//To solve the probelm we need to downcast o1 reference.
-	// We can do it in the following 4 ways
-	((I1) o1).methodI1(); //1
-	((I2) o1).methodI1(); //2
-	((B1) o1).methodI1(); //3
-	/* B1 does not have any relationship with C1 except they are "siblings".
-	Well, you can't cast siblings into one another. */
-	// ((C1)o1).methodI1(); Produces a ClassCastException
-	}
-	}
+}
+}
