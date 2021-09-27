@@ -19,7 +19,7 @@ interface GeoAnalyzer {
 		}
 
 		public float perimeter() {
-			(2 * pi * radius);
+			return (2 * pi * radius);
 		}
 	}
 

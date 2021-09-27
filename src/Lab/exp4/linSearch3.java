@@ -1,4 +1,4 @@
-package Lab.exp4;
+// package Lab.exp4;
 import java.io.*;
 
 public class linSearch3 {
