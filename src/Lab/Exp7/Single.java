@@ -21,10 +21,6 @@ public class Single {
     
     B ob1=new B();
 
-    
-    
-    
-    
     }
     
 }

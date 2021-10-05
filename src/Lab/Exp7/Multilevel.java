@@ -29,10 +29,6 @@ public class Multilevel {
     
     C ob1=new C();
 
-    
-    
-    
-    
     }
     
 }
