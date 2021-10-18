@@ -31,7 +31,7 @@ class Q {
 
 class Producer implements Runnable {
     Q q;
-
+    Thread t;
     Producer(Q q) {
         this.q = q;
         new Thread(this, "Producer").start();
@@ -41,13 +41,16 @@ class Producer implements Runnable {
         int i = 0;
         while (true) {
             q.put(i++);
+            try  {
+                Thread.sleep(1000);
+            } catch (Exception e) {}
         }
     }
 }
 
 class Consumer implements Runnable {
     Q q;
-
+    Thread t;
     Consumer(Q q) {
         this.q = q;
         new Thread(this, "Consumer").start();
@@ -56,6 +59,9 @@ class Consumer implements Runnable {
     public void run() {
         while (true) {
             q.get();
+            try  {
+                Thread.sleep(1000);
+            } catch (Exception e) {}
         }
     }
 }
