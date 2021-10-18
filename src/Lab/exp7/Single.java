@@ -15,7 +15,6 @@ class B extends A{
 }
 
 public class Single {
-
     public static void main(String[] args) {
     B ob1=new B();
     }
