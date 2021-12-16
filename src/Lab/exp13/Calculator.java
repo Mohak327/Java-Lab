@@ -206,9 +206,9 @@ public class Calculator implements ActionListener {
          buttonZero.addActionListener(this);
          buttonDot.addActionListener(this);
 
-
      }
-   //Overriding actionPerformed() method
+
+     //Overriding actionPerformed() method
      @Override
      public void actionPerformed(ActionEvent e) {
          Object source = e.getSource();

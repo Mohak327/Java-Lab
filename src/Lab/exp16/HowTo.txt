@@ -1,0 +1,2 @@
+1. Run Server and Client in different terminals
+2. type in server and same data is shown to client and vice versa
